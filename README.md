@@ -4,7 +4,7 @@
 
 An advanced AI-powered system designed to interact with **multiple disparate databases** (PostgreSQL) using natural language. Unlike standard Text-to-SQL bots, this system uses a **Router-Validator Architecture** to understand context, handle ambiguity across different business domains, and self-correct SQL errors.
 
-> 🆕 **v2.1 Updates**: 5 new tables integrated (ticket_book, leave_request, plant_visitor, request, resume_request), Hindi/Hinglish bilingual query support, negation-aware intent handling, and graceful empty result responses.
+> 🆕 **v2.2 Updates**: Replaced `plant_visitor` with new `visitors` table for Gate Pass tracking, including inline HTML image rendering for visitor photos in the chat UI. Bilingual queries and negation intent handling intact.
 
 ---
 
@@ -49,7 +49,7 @@ A comprehensive employee management system covering task tracking, leave managem
 | `users`            | Employee info & login            | user_name, department, role, email_id, number, status              |
 | `ticket_book`      | Ticket bookings & travel bills   | person_name, type_of_bill, status, bill_number, total_amount, charges |
 | `leave_request`    | Leave management & approvals     | employee_name, from_date, to_date, reason, request_status, approved_by, hr_approval |
-| `plant_visitor`    | Plant/factory visit approvals    | person_name, reason_for_visit, from_date, to_date, request_status, approve_by_name |
+| `visitors`         | Visitor gate pass tracking       | visitor_name, purpose_of_visit, person_to_meet, date_of_visit, time_of_entry, approval_status |
 | `request`          | Travel requests                  | person_name, type_of_travel, from_city, to_city, departure_date, reason_for_travel |
 | `resume_request`   | Hiring / candidate pipeline      | candidate_name, applied_for_designation, experience, interviewer_status, joined_status |
 
@@ -328,7 +328,7 @@ See `DATABASE_INTEGRATION_GUIDE.md` for a full step-by-step walkthrough.
 ### New Tables Integrated
 - `ticket_book` — Ticket bookings & travel bills
 - `leave_request` — Employee leave management with multi-level approval
-- `plant_visitor` — Plant/factory visitor approvals
+- `visitors` — Visitor gate pass tracking with inline UI image rendering!
 - `request` — Employee travel requests
 - `resume_request` — Candidate resume intake & hiring pipeline
 

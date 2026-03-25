@@ -89,6 +89,16 @@ function setupLoginForm() {
   const loginError = document.getElementById('loginError');
   const loginErrorText = document.getElementById('loginErrorText');
 
+  const togglePassword = document.getElementById('togglePassword');
+  const passwordInput = document.getElementById('loginPassword');
+
+  togglePassword.addEventListener('click', () => {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    togglePassword.classList.toggle('fa-eye');
+    togglePassword.classList.toggle('fa-eye-slash');
+  });
+
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 

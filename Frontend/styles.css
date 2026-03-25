@@ -102,6 +102,11 @@
   color: var(--text-dim);
   font-size: 0.9rem;
   margin-right: 12px;
+  transition: color 0.2s;
+}
+
+.login-field i.toggle-password:hover {
+  color: var(--accent-purple);
 }
 
 .login-field input {
